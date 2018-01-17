@@ -1,0 +1,121 @@
+CREATE USER 'root'@'192.168.1.100' IDENTIFIED BY  '***';
+GRANT ALL PRIVILEGES ON * . * TO  'root'@'192.168.1.100' IDENTIFIED BY  '***' WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+
+CREATE USER 'kodi'@'192.168.1.106' IDENTIFIED BY  '***';
+GRANT ALL PRIVILEGES ON * . * TO  'kodi'@'192.168.1.106' IDENTIFIED BY  '***' WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+
+
+CREATE DATABASE topibox ;
+
+ALTER SCHEMA `topibox`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci ;
+
+CREATE TABLE IF NOT EXISTS topibox.devices (
+  id 				char(36)  		NOT NULL,
+  mcAdress 			varchar(30)  	NOT NULL,
+  mcVendor 			varchar(100) 	NULL,
+  name 				varchar(100) 	NULL,
+  ip 				varchar(15) 	NULL,
+  lastDateDetect	datetime		NOT NULL,	
+  hautParleur		boolean,         			
+  microfone			boolean,	
+  ecran				boolean,			
+  camera			boolean,			
+  kodi				boolean,			
+  mobile			boolean,		
+  PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS topibox.emplacement (
+	id 				Char(36)		NOT NULL,
+	name			varchar(100)	NULL,
+PRIMARY KEY (id));
+
+INSERT INTO topibox.emplacement (id, name) VALUES ('1', 'Salon');
+INSERT INTO topibox.emplacement (id, name) VALUES ('2', 'Cuisine');
+INSERT INTO topibox.emplacement (id, name) VALUES ('3', 'Chambre 1');
+INSERT INTO topibox.emplacement (id, name) VALUES ('4', 'Chambre 2');
+INSERT INTO topibox.emplacement (id, name) VALUES ('5', 'Salle de bain');
+
+CREATE TABLE IF NOT EXISTS topibox.devicesByEmplacement(
+	idEmplacement		Char(36)			NOT NULL,	
+	idDevice			Char(36)			NOT NULL,	
+PRIMARY KEY (idEmplacement, idDevice));
+
+CREATE TABLE IF NOT EXISTS topibox.users (
+  id char(36) NOT NULL,
+  alias varchar(100) NOT NULL,
+  nom varchar(100)  NULL,
+  prenom varchar(100) NULL,
+  mcAdress varchar(30) NULL,
+  code_langue varchar(10) NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_alias (alias)
+  );
+  
+ALTER TABLE topibox.users 
+  ADD COLUMN voice_id BLOB NULL
+  AFTER code_langue;
+
+  
+CREATE TABLE IF NOT EXISTS topibox.ordres (
+  id         		char(36)      NOT NULL,
+  key_ordre  		varchar(500)  NOT NULL,
+  module     		varchar(100)  NOT NULL,
+  type       		varchar(100)  NOT NULL,
+  active     		boolean,
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_ordre (key_ordre, module)
+  );
+
+CREATE TABLE IF NOT EXISTS topibox.mapping (
+  id         char(36)      NOT NULL,
+  id_ordre   char(36)      NOT NULL,
+  key_vocal	 varchar(500)  NOT NULL,
+  local		 char(5),
+  type       varchar(100),
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_mapping (id_ordre, key_vocal, type, local)
+  );
+
+CREATE TABLE IF NOT EXISTS topibox.text_to_speech (
+  id         		char(36)      NOT NULL,
+  id_ordre   		char(36)      NOT NULL,
+  local		 		char(5)   	  NOT NULL,
+  text_to_speech	varchar(500)  NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_text_to_speech (id_ordre, local)
+  );
+
+CREATE VIEW  topibox.ordre_mapping AS
+	select o.id, o.key_ordre, o.module, o.type as type_ordre, o.active, m.key_vocal, m.local as local_mapping, m.type as type_mapping, t.text_to_speech, t.local as local_text_to_speech
+	from topibox.ordres o
+	left outer join topibox.mapping m
+		on o.id = m.id_ordre
+	left outer join topibox.text_to_speech t
+		on o.id = t.id_ordre;
+
+CREATE TABLE IF NOT EXISTS topibox.word (
+  id         char(36)      	NOT NULL,
+  word       varchar(255) 	NOT NULL,
+  local   	 char(5) 		NOT NULL,
+  active     boolean,
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_word (word )
+  );
+
+ALTER TABLE topibox.word CONVERT TO CHARACTER SET utf8 COLLATE utf8_bin; 
+
+CREATE TABLE IF NOT EXISTS topibox.prononciation (
+  id         char(36)      	NOT NULL,
+  id_word    char(36) 	    NOT NULL,
+  local   	 char(5) 		NOT NULL,
+  vocal		varchar(500)	NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY ix_prononciation (id_word, local, vocal)
+  );
+
+CREATE VIEW  topibox.word_prononciation AS
+	select w.id, word, w.local, w.active, p.vocal, p.local as local_prononciation  
+	from topibox.word w
+	left outer join topibox.prononciation p
+		on w.id = p.id_word;
+  

@@ -1,0 +1,372 @@
+a aa
+affiche aa ff ii ch
+affiche(2) aa ff ii ch ee
+afficher aa ff ii ch ei
+afficher(2) aa ff ii ch ei rr
+arrête aa rr ai tt
+arrête(2) aa rr ai tt ee
+arrêter aa rr ai tt ei
+arrêter(2) aa rr ai tt ei rr
+bain bb in
+bureau bb uu rr au
+bonjour bb on jj ou rr
+chambre ch an bb rr
+chambre(2) ch an bb rr ee
+cité ss ii tt ei
+citée ss ii tt ei
+citées ss ii tt ei
+citées(2) ss ii tt ei zz
+cités ss ii tt ei
+cités(2) ss ii tt ei zz
+course kk ou rr ss
+course(2) kk ou rr ss ee
+courses kk ou rr ss
+courses(2) kk ou rr ss ee
+courses(3) kk ou rr ss ee zz
+création kk rr ai aa ss yy on
+créations kk rr ai aa ss yy on
+créations(2) kk rr ai aa ss yy on zz
+d' dd
+d'or dd oo rr
+dans dd an
+de dd
+de(2) dd ee
+des dd ei
+debout dd ee bb ou
+docteur dd oo kk tt oe rr
+épisode ai pp ii zz oo dd
+épisode(2) ai pp ii zz oo dd ee
+fainéant ff ai nn ai an
+fainéant(2) ff ai nn ai an tt
+fainéant(3) ff ei gn ai an 
+fainéants ff ai nn ai an
+fainéants(2) ff ai nn ai an zz
+film ff ii ll mm
+fin ff in
+grand gg rr an
+grand(2) gg rr an tt
+hotel oo tt ai ll
+interet in tt ai rr ai
+jarvis jj aa rr vv ii ss ee
+jarvis(2) jj aa rr vv ii ss
+la ll aa
+lance ll an ss
+lance(2) ll an ss ee
+lancer ll an ss ei
+lancer(2) ll an ss ei rr
+lecture ll ai kk tt uu rr
+lecture(2) ll ai kk tt uu rr ee
+les ll ai 
+liste ll ii ss tt
+liste(2) ll ii ss tt ee
+met mm ai
+met(2) mm ai tt
+mettre mm ai tt rr
+mettre(2) mm ai tt rr ee
+moi mm ww aa
+montre mm on tt rr
+montre(2) mm on tt rr ee
+montrent mm on tt rr ee
+montrer mm on tt rr ei
+montrer(2) mm on tt rr ei rr
+musique mm uu zz ii kk
+musique(2) mm uu zz ii kk ee
+mystérieuse mm ii ss tt ai rr yy eu zz
+mystérieuse(2) mm ii ss tt ai rr yy eu zz ee
+mystérieuses mm ii ss tt ai rr yy eu zz
+mystérieuses(2) mm ii ss tt ai rr yy eu zz ee
+note nn oo tt
+ok au kk ai
+ok(2) oo kk ai
+or oo rr
+or(2) au rr
+or(3) oo rr
+ordre oo rr dd rr
+ordre(2) oo rr dd rr ee
+ordres oo rr dd rr
+ordres(2) oo rr dd rr ee
+ordres(3) oo rr dd rr ee zz
+ordres(4) oo rr dd rr zz
+pause pp au zz
+pause(2) pp au zz ee
+person pp ai rr ss oo nn
+personne pp ai rr ss oo nn
+personne(2) pp ai rr ss oo nn ee
+peux pp eu
+peux(2) pp eu zz
+que kk ee
+qué kk ei
+redémarre rr ee dd ai mm aa rr
+redémarre(2) rr ee dd ai mm aa rr ee
+reprendre rr ee pp rr an dd rr
+reprendre(2) rr ee pp rr an dd rr ee
+réveille rr ai vv ai yy
+réveille(2) rr ai vv ai yy ee
+réveille(3) rr ei vv ai yy ee
+salut ss aa ll uu
+salut(2) ss aa ll uu tt
+saison ss ai zz on 
+scan ss kk aa nn
+scan(2) ss kk aa nn ee
+saison ss ai zz on
+salle ss aa ll
+salle(2) ss aa ll ee
+se ss ee
+sé ss ei 
+série ss ai rr ii
+série(2) ss ei rr ii
+stop ss tt au pp
+stop(2) ss tt oo pp
+suivant ss uy ii vv an
+suivant(2) ss uy ii vv an tt
+toi tt au ii
+toi(2) tt ww aa
+topi tt au pp ii
+topi(2) tt oo pp ii
+tu tt uu
+tu(2) tt uu
+utilisateur uu tt ii ll ii zz aa tt oe rr
+utilisateurs uu tt ii ll ii zz aa tt oe rr
+utilisateurs(2) uu tt ii ll ii zz aa tt oe rr zz
+
+abbey aa bb ei
+anatomie aa nn aa tt oo mm ii
+anatomia aa nn aa tt oo mm ii aa
+avecina aa bb ai ss yy nn aa 
+avecina(2) aa bb ei ss yy nn aa 
+ball bb au ll
+dexter dd ai kk ss tt ai rr
+death dd ai ss
+downtown dd oo ww nn tt oo ww nn
+of oo ff
+interest in tt ai rr ai ss tt 
+interest(2) in tt ei rr ai ss tt 
+grey gg rr ai 
+grey(2) gg rr ei 
+grey's gg rr ai zz
+grey's(2) gg rr ei zz
+house aa ou ss
+house(2) ou zz
+wife ww aa yy ff 
+desperate dd ai ss pp ai rr ai tt
+desperate(2) dd ai ss pp ai rr ai tt ee
+scandale ss kk an dd aa ll
+scandale(2) ss kk an dd aa ll ee
+viking vv ii kk ii ii gg
+vikings vv ii kk ii ii gg
+vikings(2) vv ii kk ii ii gg zz
+vikings(3) vv ii kk ii nn gg
+dragon dd rr aa gg oo nn ee
+dragon dd rr aa gg on
+dragons dd rr aa gg on
+malcolm mm aa ll kk oo ll mm
+game gg aa yy mm ee
+trône tt rr au nn
+trône(2) tt rr au nn ee
+
+
+un un
+un(2) un nn
+un(3) uu nn
+deux dd eu
+deux(2) dd eu zz
+trois tt rr ww aa
+trois(2) tt rr ww aa zz
+quatre kk aa tt rr
+quatre(2) kk aa tt rr ee
+cinq ss in
+cinq(2) ss in kk
+six ss ii
+six(2) ss ii ss
+six(3) ss ii zz
+sept ss ai tt
+huit uy ii
+huit(2) uy ii tt
+neuf nn eu ff
+neuf(2) nn oe ff
+dix dd ii
+dix(2) dd ii kk ss
+dix(3) dd ii ss
+dix(4) dd ii zz
+onze on zz
+onze(2) on zz ee
+douze dd ou zz
+douze(2) dd ou zz ee
+treize tt rr ai zz
+treize(2) tt rr ai zz ee
+quatorze kk aa tt oo rr zz
+quatorze(2) kk aa tt oo rr zz ee
+quatorze(3) kk ww aa tt oo rr zz
+quinze kk in zz
+quinze(2) kk in zz ee
+quinze(3) kk in zz ei
+seize ss ai zz
+seize(2) ss ai zz ee
+dix-sept dd ii ss ai tt
+dix-huit dd ii zz uy ii
+dix-huit(2) dd ii zz uy ii tt
+dix-neuf dd ii zz nn oe ff
+vingt vv ii nn gg tt
+vingt(2) vv in
+vingt(3) vv in tt
+vingt-cinq vv in tt ee ss in
+vingt-cinq(2) vv in tt ee ss in kk
+vingt-deux vv in tt ee dd eu
+vingt-deux(2) vv in tt ee dd eu zz
+vingt-et-un vv in tt ei un
+vingt-et-un(2) vv in tt ei un nn
+vingt-huit vv in tt uy ii
+vingt-huit(2) vv in tt uy ii tt
+vingt-neuf vv in tt ee nn oe ff
+vingt-quatre vv in tt ee kk aa tt rr
+vingt-quatre(2) vv in tt ee kk aa tt rr ee
+vingt-sept vv in tt ee ss ai tt
+vingt-six vv in tt ee ss ii
+vingt-six(2) vv in tt ee ss ii ss
+vingt-six(3) vv in tt ee ss ii zz
+vingt-trois vv in tt ee tt rr ww aa
+vingt-trois(2) vv in tt ee tt rr ww aa zz
+vingt_et_un vv in tt ai un
+vingt_et_un(2) vv in tt ai un nn
+vingt_et_une vv in tt ai uu nn
+vingt_et_une(2) vv in tt ai uu nn ee
+trente tt rr an tt
+trente(2) tt rr an tt ee
+trente-cinq tt rr an tt ee ss in
+trente-cinq(2) tt rr an tt ee ss in kk
+trente-deux tt rr an tt ee dd eu
+trente-deux(2) tt rr an tt ee dd eu zz
+trente-huit tt rr an tt uy ii
+trente-huit(2) tt rr an tt uy ii tt
+trente-neuf tt rr an tt ee nn oe ff
+trente-quatre tt rr an tt ee kk aa tt rr
+trente-quatre(2) tt rr an tt ee kk aa tt rr ee
+trente-sept tt rr an tt ee ss ai tt
+trente-six tt rr an tt ee ss ii
+trente-six(2) tt rr an tt ee ss ii ss
+trente-six(3) tt rr an tt ee ss ii zz
+trente-trois tt rr an tt ee tt rr ww aa
+trente-trois(2) tt rr an tt ee tt rr ww aa zz
+trente_et_un tt rr an tt ai un
+trente_et_un(2) tt rr an tt ai un nn
+quarante kk aa rr an tt
+quarante(2) kk aa rr an tt ee
+quarante(3) kk ww aa rr aa nn tt
+quarante-cinq kk aa rr an tt ee ss in
+quarante-cinq(2) kk aa rr an tt ee ss in kk
+quarante-deux kk aa rr an tt ee dd eu
+quarante-deux(2) kk aa rr an tt ee dd eu zz
+quarante-huit kk aa rr an tt uy ii
+quarante-huit(2) kk aa rr an tt uy ii tt
+quarante-neuf kk aa rr an tt ee nn oe ff
+quarante-quatre kk aa rr an tt ee kk aa tt rr
+quarante-quatre(2) kk aa rr an tt ee kk aa tt rr ee
+quarante-sept kk aa rr an tt ee ss ai tt
+quarante-six kk aa rr an tt ee ss ii
+quarante-six(2) kk aa rr an tt ee ss ii ss
+quarante-six(3) kk aa rr an tt ee ss ii zz
+quarante-trois kk aa rr an tt ee tt rr ww aa
+quarante-trois(2) kk aa rr an tt ee tt rr ww aa zz
+quarante_et_un kk aa rr an tt ai un
+quarante_et_un(2) kk aa rr an tt ai un nn
+quarante_et_une kk aa rr an tt ai uu nn
+cinquante ss in kk an tt
+cinquante(2) ss in kk an tt ee
+cinquante-cinq ss in kk an tt ee ss in
+cinquante-cinq(2) ss in kk an tt ee ss in kk
+cinquante-deux ss in kk an tt ee dd eu
+cinquante-deux(2) ss in kk an tt ee dd eu zz
+cinquante-huit ss in kk an tt uy ii
+cinquante-huit(2) ss in kk an tt uy ii tt
+cinquante-neuf ss in kk an tt ee nn oe ff
+cinquante-quatre ss in kk an tt ee kk aa tt rr
+cinquante-quatre(2) ss in kk an tt ee kk aa tt rr ee
+cinquante-sept ss in kk an tt ee ss ai tt
+cinquante-six ss in kk an tt ee ss ii
+cinquante-six(2) ss in kk an tt ee ss ii ss
+cinquante-six(3) ss in kk an tt ee ss ii zz
+cinquante-trois ss in kk an tt ee tt rr ww aa
+cinquante-trois(2) ss in kk an tt ee tt rr ww aa zz
+cinquante_et_un ss in kk an tt ai un
+cinquante_et_un(2) ss in kk an tt ai un nn
+soixante ss ww aa ss an tt
+soixante(2) ss ww aa ss an tt ee
+soixante-cinq ss ww aa ss an tt ee ss in
+soixante-cinq(2) ss ww aa ss an tt ee ss in kk
+soixante-deux ss ww aa ss an tt ee dd eu
+soixante-deux(2) ss ww aa ss an tt ee dd eu zz
+soixante-dix ss ww aa ss an tt ee dd ii
+soixante-dix(2) ss ww aa ss an tt ee dd ii ss
+soixante-dix(3) ss ww aa ss an tt ee dd ii zz
+soixante-dix-huit ss ww aa ss an tt ee dd ii zz uy ii
+soixante-dix-huit(2) ss ww aa ss an tt ee dd ii zz uy ii tt
+soixante-dix-neuf ss ww aa ss an tt ee dd ii zz nn oe ff
+soixante-dix-sept ss ww aa ss an tt ee dd ii ss ai tt
+soixante-douze ss ww aa ss an tt ee dd ou zz
+soixante-douze(2) ss ww aa ss an tt ee dd ou zz ee
+soixante-huit ss ww aa ss an tt uy ii
+soixante-huit(2) ss ww aa ss an tt uy ii tt
+soixante-neuf ss ww aa ss an tt ee nn oe ff
+soixante-quatorze ss ww aa ss an tt ee kk aa tt oo rr zz
+soixante-quatorze(2) ss ww aa ss an tt ee kk aa tt oo rr zz ee
+soixante-quatre ss ww aa ss an tt ee kk aa tt rr
+soixante-quatre(2) ss ww aa ss an tt ee kk aa tt rr ee
+soixante-quinze ss ww aa ss an tt ee kk in zz
+soixante-quinze(2) ss ww aa ss an tt ee kk in zz ee
+soixante-seize ss ww aa ss an tt ee ss ai zz
+soixante-seize(2) ss ww aa ss an tt ee ss ai zz ee
+soixante-sept ss ww aa ss an tt ee ss ai tt
+soixante-six ss ww aa ss an tt ee ss ii
+soixante-six(2) ss ww aa ss an tt ee ss ii ss
+soixante-six(3) ss ww aa ss an tt ee ss ii zz
+soixante-treize ss ww aa ss an tt ee tt rr ai zz
+soixante-treize(2) ss ww aa ss an tt ee tt rr ai zz ee
+soixante-trois ss ww aa ss an tt ee tt rr ww aa
+soixante-trois(2) ss ww aa ss an tt ee tt rr ww aa zz
+soixante_et_onze ss ww aa ss an tt ai on zz
+soixante_et_onze(2) ss ww aa ss an tt ai on zz ee
+soixante_et_un ss ww aa ss an tt ai un
+soixante_et_un(2) ss ww aa ss an tt ai un nn
+quatre-vingt kk aa tt rr ee vv in
+quatre-vingt-cinq kk aa tt rr ee vv in ss in
+quatre-vingt-cinq(2) kk aa tt rr ee vv in ss in kk
+quatre-vingt-deux kk aa tt rr ee vv in dd eu
+quatre-vingt-deux(2) kk aa tt rr ee vv in dd eu zz
+quatre-vingt-dix kk aa tt rr ee vv in dd ii
+quatre-vingt-dix(2) kk aa tt rr ee vv in dd ii ss
+quatre-vingt-dix(3) kk aa tt rr ee vv in dd ii zz
+quatre-vingt-dix-huit kk aa tt rr ee vv in dd ii zz uy ii
+quatre-vingt-dix-huit(2) kk aa tt rr ee vv in dd ii zz uy ii tt
+quatre-vingt-dix-neuf kk aa tt rr ee vv in dd ii zz nn oe ff
+quatre-vingt-dix-sept kk aa tt rr ee vv in dd ii ss ai tt
+quatre-vingt-douze kk aa tt rr ee vv in dd ou zz
+quatre-vingt-douze(2) kk aa tt rr ee vv in dd ou zz ee
+quatre-vingt-huit kk aa tt rr ee vv in tt uy ii
+quatre-vingt-huit(2) kk aa tt rr ee vv in tt uy ii tt
+quatre-vingt-neuf kk aa tt rr ee vv in nn oe ff
+quatre-vingt-onze kk aa tt rr ee vv in on zz
+quatre-vingt-onze(2) kk aa tt rr ee vv in on zz ee
+quatre-vingt-quatorze kk aa tt rr ee vv in kk aa tt oo rr zz
+quatre-vingt-quatorze(2) kk aa tt rr ee vv in kk aa tt oo rr zz ee
+quatre-vingt-quatre kk aa tt rr ee vv in kk aa tt rr
+quatre-vingt-quatre(2) kk aa tt rr ee vv in kk aa tt rr ee
+quatre-vingt-quinze kk aa tt rr ee vv in kk in zz
+quatre-vingt-quinze(2) kk aa tt rr ee vv in kk in zz ee
+quatre-vingt-seize kk aa tt rr ee vv in ss ai zz
+quatre-vingt-seize(2) kk aa tt rr ee vv in ss ai zz ee
+quatre-vingt-sept kk aa tt rr ee vv in ss ai tt
+quatre-vingt-six kk aa tt rr ee vv in ss ii
+quatre-vingt-six(2) kk aa tt rr ee vv in ss ii ss
+quatre-vingt-six(3) kk aa tt rr ee vv in ss ii zz
+quatre-vingt-treize kk aa tt rr ee vv in tt rr ai zz
+quatre-vingt-treize(2) kk aa tt rr ee vv in tt rr ai zz ee
+quatre-vingt-trois kk aa tt rr ee vv in tt rr ww aa
+quatre-vingt-trois(2) kk aa tt rr ee vv in tt rr ww aa zz
+quatre-vingt-un kk aa tt rr ee vv in un
+quatre-vingt-un(2) kk aa tt rr ee vv in un nn
+quatre-vingts kk aa tt rr ee vv in
+quatre-vingts(2) kk aa tt rr ee vv in zz
+cent ss an
+cent(2) ss an tt
+mille mm ii ll
+mille(2) mm ii ll ee
