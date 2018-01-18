@@ -46,8 +46,8 @@ class SocketBidir():
                     self.send(key="connected")
                 except Exception as e :
                     self.isConnected = False
-                    print("SocketBidir.py, Synchronisation en cours !!! ")    
-                    time.sleep(1)
+                    print("SocketBidir.py, Synchronisation en cours !!! " + self.ipToConnect+ e.__str__())    
+                    time.sleep(5)
             print("SocketBidir connected")
 
     def slaveSenderConnexion(self):
@@ -56,9 +56,12 @@ class SocketBidir():
         self.send(key="connected")
     
     def send(self, input_time=0, repete_time=0, key=None, message=None):
-        
-        json2Send = self.utils.obj2Json(input_time, repete_time, key, message)
-        self.socketSender.send(json2Send)    
+        try:
+            json2Send = self.utils.obj2Json(input_time, repete_time, key, message)
+            self.socketSender.send(json2Send.encode())    
+        except Exception as e:
+            print("Error SocketBiDir send => " + json2Send  )
+            print("Error SocketBiDir error=> " + e.__str__())
 
     def stop(self):
         print("Stop SocketBidir")
@@ -93,7 +96,7 @@ class SocketReicever(threading.Thread):
             if self.kill:
                 break
             print("Socket_bidir en attente de reception  ")
-            dataJson = self.client.recv(4096)
+            dataJson = self.client.recv(4096).decode()
             if dataJson != "": 
                 data = self.parent.utils.json2obj(dataJson)
                 if data: 
@@ -146,7 +149,7 @@ class Utils():
                 data = data[:index]
             result = json.loads(data, object_hook=self._json_object_hook)
         except Exception as e:
-            print(e.__str__())
+            print("SocketBidirection json2obj => " + e.__str__())
             #  result = json.loads(text_erreur, object_hook= self._json_object_hook)
 
         return result

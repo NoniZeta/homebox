@@ -26,9 +26,9 @@ from core import PORT_VOCAL_ADD, PATH_VOCAL, ACOUSTIC, DICTIONARY,\
     MODEL_LM_VOCAL
 from pocketsphinx.pocketsphinx import Decoder
 
-hmmd_file = 'acoustic'
-dictp_file = 'custom.dic'
-lmdir_file = 'custom.lm.bin'
+#hmmd_file = 'acoustic'
+#dictp_file = 'custom.dic'
+#lmdir_file = 'custom.lm.bin'
 
 hmmd = os.path.join(PATH_VOCAL, ACOUSTIC)
 dictp = os.path.join(PATH_VOCAL, DICTIONARY)
