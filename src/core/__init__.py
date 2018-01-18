@@ -57,7 +57,7 @@ PORT_MAX_SCAN    = 10025
 """
 #Ports applicatifs
 PORT_SERVER                 = 7002
-PORT_HTTP_KODI              = 8080
+PORT_HTTP_KODI              = 8081
 PORT_WS_KODI                = 9090
 
 #Ports de controle, de stream, d'échange 

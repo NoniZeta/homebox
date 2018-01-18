@@ -21,11 +21,11 @@ import socket
 
 from gtts import gTTS
 import pygame
-from core import PORT_TTS
+from core import PORT_TTS, PATH_TTS
 
 
-CURRENT_DIR = os.path.dirname(__file__)
-DIR_MP3 = os.path.join(CURRENT_DIR, "../resources")
+#CURRENT_DIR = os.path.dirname(__file__)
+#DIR_MP3 = os.path.join(CURRENT_DIR, "../resources")
 
 # install requests.2.2.1 python setup.py install
 class PlayerTTS:    
@@ -46,13 +46,10 @@ class PlayerTTS:
               
     def play(self, text_key, ip = None):   
         try: 
-            fileTmp = DIR_MP3 + "/" + self.lang + "/mp3/" + text_key + ".mp3"
-            
-            current_dir = os.path.dirname(__file__)
-            script = '../src/static/resources/locales/' + self.lang + '/messages.json'
-            newDirection = os.path.join(current_dir, script)
+            fileTmp = os.path.join(PATH_TTS,  text_key + ".mp3")
+            messageJson = os.path.join(PATH_TTS, 'messages.json')
 
-            with open(newDirection) as locale_file:    
+            with open(messageJson) as locale_file:    
                 locale_data = json.load(locale_file)
         
             text = locale_data[text_key]["message"]

@@ -357,7 +357,7 @@ class Utils():
         return False
     
     def invoke(self, cmd):
-        (sin, sout) = os.popen2(cmd)
+        (sin, sout) = os.popen(cmd)
         return sout.read()
     
 

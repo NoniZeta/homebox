@@ -34,6 +34,8 @@ pip3 install tensorflow
 pip3 install gTTS
 pip3 install netifaces
 pip3 install pygame
+pip3 install pyaudio
+pip3 install websocket_client
 
 wget https://github.com/cmusphinx/g2p-seq2seq/archive/master.zip
 unzip g2p-seq2seq-master.zip

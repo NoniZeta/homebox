@@ -87,9 +87,9 @@ class FileTransfertThread(threading.Thread):
         self.parent = parent   
         self.ip = ip
         self.port = port
-        current_dir = os.path.dirname(__file__)
+        #current_dir = os.path.dirname(__file__)
         print("*** port download file   **** : " + str(self.port))
-        self.path_file = os.path.join(current_dir, self.parent.path_vocal)    
+        #self.path_file = os.path.join(current_dir, self.parent.path_vocal)    
         
     def run(self): 
         while 1 :
@@ -114,7 +114,7 @@ class FileTransfertThread(threading.Thread):
             client.send("ok")
             time.sleep(1)
               
-            fn = os.path.join(self.path_file, fileToUpdate)
+            fn = os.path.join(PATH_VOCAL, fileToUpdate)
             #print 'Envoi en cours'
             with open(fn, 'rb') as f:
                 client.sendall(f.read())

@@ -15,6 +15,7 @@ sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y systemd
 
 sudo apt-get install -y python-pyaudio
+sudo apt-get install -y python3-pyaudio
 sudo apt-get install -y autoconf
 sudo apt-get install -y libtool
 sudo apt-get install -y automake-dev
@@ -35,6 +36,7 @@ sudo apt-get install -y flashplugin-installer
 sudo apt-get install -y nodejs npm
 sudo pip install --egg mysql-connector-python-rf
 sudo pip install requests
+
 sudo apt-get install -y python-mysqldb
 sudo apt install -y net-tools
 sudo alsa force-reload

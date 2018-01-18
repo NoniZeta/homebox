@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/TopiServer.py=utf-8
+encoding//src/HomeServer.py=utf-8
 encoding//src/core/Bus.py=utf-8
 encoding//src/core/DecodeThread.py=utf-8
 encoding//src/core/DevicesService.py=utf-8
