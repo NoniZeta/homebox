@@ -2,8 +2,6 @@
 # install java
 # https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
 
-
-
 sudo rm /var/lib/dpkg/lock
 
 sudo apt-get update
@@ -18,20 +16,24 @@ echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sud
 sudo add-apt-repository ppa:deluge-team/ppa
 sudo add-apt-repository ppa:team-xbmc/ppa
 sudo add-apt-repository ppa:webupd8team/java
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
 
 sudo apt-get update 
 
 sudo apt-get install -y google-chrome-stable
-
-sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
-wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
-sudo apt install -y filezilla
-
-sudo apt-get install -y  deluge
+sudo apt-get install -y filezilla
+sudo apt-get install -y deluge
 sudo apt-get install -y deluged deluge-web deluge-console
-
 sudo apt-get install -y kodi
 sudo apt-get install -y git
 sudo apt-get install -y openssh-server
-
 sudo apt-get install -y oracle-java9-installer
+sudo apt-get install -y spotify-client
+
+
+
+

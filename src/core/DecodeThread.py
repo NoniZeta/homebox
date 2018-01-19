@@ -175,7 +175,7 @@ class DecodeThread(threading.Thread):
              #       print("Recognised => " + self.recognised[0])
                     ordre, self.inputDetected = self.matchOrden(self.recognised[0], self.recognised[1])
                 except Exception as e :
-                    print("ERROR Recognised => " + e.__str__())
+                    print("DecodeThread ERROR Recognised => " + e.__str__())
     
     #        if ordres and not self.ordresDetected:
     #            self.inputPhrases = None
@@ -217,14 +217,14 @@ class DecodeThread(threading.Thread):
         
         return (resultString, listeMots)     
     
-    def matchOrden(self, recognizeWord, listOfMatching=None):
+    def matchOrden(self, phrasePrincipal_utf8, listPhraseSecondaire_utf8=None):
         print("matchOrden debut .....")
         #print ("Reco => " + recognizeWord_utf8)
 
-        phrasePrincipal_utf8 = recognizeWord.decode("utf-8")
-        listPhraseSecondaire_utf8 = []
-        for matching in listOfMatching:
-            listPhraseSecondaire_utf8.append(matching.decode("utf-8"))
+        #phrasePrincipal_utf8 = recognizeWord.decode("utf-8")
+        #listPhraseSecondaire_utf8 = []
+        #for matching in listOfMatching:
+        #    listPhraseSecondaire_utf8.append(matching.decode("utf-8"))
     
         actions = self.searchAction(phrasePrincipal_utf8, listPhraseSecondaire_utf8)    
         messages, inputs, ordresMessages = self.searchMappings(phrasePrincipal_utf8, listPhraseSecondaire_utf8)

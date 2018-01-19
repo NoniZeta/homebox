@@ -107,7 +107,8 @@ class SocketReicever(threading.Thread):
                             self.parent.slaveSenderConnexion()     
                     else :
                         self.socketCallback(data)  
-                    
+            else:
+                time.sleep(1)        
         print("Sortie de SocketReicever")            
      
     def stop(self):
