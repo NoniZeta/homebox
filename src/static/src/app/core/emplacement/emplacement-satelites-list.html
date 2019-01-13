@@ -1,0 +1,31 @@
+<div class="button_box">
+    <button class='btn' (click)="edit()">edit</button>
+</div>
+
+<div> {{item?.name}}</div>
+    <div class="list_scroll">
+        <div class="list_content">
+            <div class='elt' *ngFor="let satelite of item?.devices">
+                <li>{{satelite.name}}</li>
+            <div>
+        </div>
+    </div>
+</div>
+
+<modal [title]="Devices"  [showClose]='true' (onClose)="close()" #editModal>{{ bindModal(editModal) }}
+
+    <label>liste de éléments disponibles</label>           
+    <div class="list_scroll">
+        <div class="list_content">
+            <div class='elt' *ngFor="let device of devices">
+                 <input type="checkbox" class="checkbox_class" [(ngModel)]='device.isAssociated' >
+                <label>{{device.name}}</label>
+            </div>
+        </div>
+    </div> 
+    <footer>
+        <button class='btn' (click)="close()">Cancel</button>
+        <button class='btn' (click)="save()" >Enregistrer</button>
+    </footer>
+</modal>
+

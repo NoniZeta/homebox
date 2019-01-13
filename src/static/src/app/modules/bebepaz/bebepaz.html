@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+          <img [src]="stream"/> 
+    </div>
+    <div class="col-12 col-md-auto">
+        <div class="settings">
+            <div class="row1">
+                <div class="question">
+                Activation camera ?
+                </div>
+                <div class="switch">
+                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" [(ngModel)]= 'isActive' (change)="onChange()">
+                    <label for="cmn-toggle-1"></label>
+                </div>
+            </div><!-- /row -->
+            <div class="row1">
+                <div class="question">
+                Activation Musique ?
+                </div>
+                <div class="switch">
+                    <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox" [(ngModel)]= 'isMusicActive' (change)="onChangeMusique()">
+                    <label for="cmn-toggle-2"></label>
+                </div>
+            </div><!-- /row -->
+        </div>
+    </div>
+  </div>
+</div>  
+
+

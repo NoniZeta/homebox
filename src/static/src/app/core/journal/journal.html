@@ -1,0 +1,52 @@
+
+<section >
+    <div class="elt">
+        <label class="entete">Actions</label>
+        <div  *ngFor="let item of vocalDetection?.actions">
+            <span>{{item.key_ordre}}</span>
+        </div>
+    </div>
+    <div class='elt'>
+        <label class="entete">Messages</label>
+        <div *ngFor="let item of vocalDetection?.messages">
+            <span>{{item.key_vocal}}</span>
+        </div>
+    </div>
+    <div class='elt'>
+        <label class="entete">inputs</label>
+        <div  *ngFor="let item of vocalDetection?.inputs">
+            <span>{{item.key_vocal}}</span>
+        </div>    
+    </div>
+    <div class='elt'>
+        <label class="entete">variables</label>
+        <div  *ngFor="let item of vocalDetection?.variables">
+            <span>{{item.key_ordre}}</span>
+        </div>
+    </div>
+    <div class="ordre">
+        <div>Ordre Detected : <span>{{ordreDetected?.ordre?.key_ordre}}</span></div>
+        <div *ngFor="let item of ordreDetected?.input | keys">
+            <div>input selected : <span>{{item.key}}</span></div>
+            <div  *ngFor="let v of item.value">
+                <div>Variable : <span>{{v.key_ordre}}</span></div>
+            </div>
+        </div>
+    </div>    
+</section>
+<section>
+    <div class='elt'>
+        <label>Reconnues</label>
+        <label>{{decodedWords.bestResult}}</label>
+        <div *ngFor="let item of decodedWords?.others_words">
+            <label>{{item}}</label>
+        </div>
+    </div>
+        
+    <div class='elt'>
+        <label>journal</label>
+        <div *ngFor="let item of journal">
+            <label>{{item}}</label>
+        </div>
+    </div>
+</section>

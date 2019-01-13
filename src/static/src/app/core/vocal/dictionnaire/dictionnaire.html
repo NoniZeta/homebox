@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+        <div class="row">
+           <div class="col-xs-2">
+                <label class="label-control">Filter by words</label>
+                <input class="form-control" [(ngModel)]="filterQuery"/>
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <label class="col-xs-12 label-control">Action</label>
+                </div>
+                <div class="col-xs-2">
+                    <div class="row">
+                        <button (click)="addWord()" class="btn">Ajout</button>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="row">
+                        <button (click)="saveWords()" class="btn">Enregistrer</button>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="row">
+                        <button (click)="createDic()" class="btn">Creer dictionnaire</button>
+                    </div>
+                </div>
+            </div>
+                 <div class="col-xs-2">
+                    <div class="row">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" [(ngModel)]='isModifiedFilter' > <!--#cv1 (change)="onChangeM(cv1.checked)" #cv2 (change)="onChangeE(cv2.checked)"-->
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Modifiés</span>
+                        </label>
+                    </div>
+                </div>
+        </div>
+        <div class="panel panel-default">
+
+            <table class="table table-striped" [mfData]="data | wordFilter : filterQuery | noMappingFilter : isModifiedFilter" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                <tr>
+                    <th>
+                        <mfDefaultSorter by="word">Word</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="local">locale</mfDefaultSorter>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data" [ngClass]="{'highlight': item.isModified || !item.id}">
+                    <td>{{item.word}}</td>
+                    <td>{{item.local}}</td>
+                    <table>
+                        <tr *ngFor="let row of item.vocal">
+                            <td>{{row.grapheme}}</td>
+                            <td>{{row.local}}</td>
+                        </tr>
+                    </table>
+                    <td>
+                        <button (click)="edit(item)" class="btn">Edit</button>
+                    </td>
+                     <td>
+                        <button (click)="deleteWord(item)" class="btn btn-danger">X</button>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <mfBootstrapPaginator [rowsOnPageSet]="[50,100,150]"></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<modal  [showClose]='true' (onClose)="close()" #editModal>{{ bindModal(editModal) }}
+    <header>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" class="custom input-name" [(ngModel)]="wordSelected.word">       
+                </td>
+                <td>
+                    <select class="form-control" [(ngModel)]="wordSelected.local">
+                            <option ngValue="fr">Fr</option>
+                            <option ngValue="en">En</option>
+                            <option ngValue="es">Es</option>
+                        </select>
+                </td> 
+            </tr>
+        </table>
+    </header>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Grapheme</th>
+                <th>Locale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of wordSelected?.vocal">
+                <td><input type="text" class="custom input-name" [(ngModel)]="row.grapheme"></td>
+                <td>
+                    <select class="form-control" [(ngModel)]="row.local">
+                        <option ngValue="fr">Fr</option>
+                        <option ngValue="en">En</option>
+                        <option ngValue="es">Es</option>
+                    </select>
+                </td>
+                <td>
+                    <button (click)="delete(row)" class="btn btn-danger">X</button>
+                </td>
+           </tr>
+           <tr>
+            <td>
+                <input type="text" class="custom input-name" [(ngModel)]="newGrapheme">       
+            </td>
+            <td>
+                <select class="form-control" [(ngModel)]="newLocale">
+                    <option ngValue="fr">Fr</option>
+                    <option ngValue="en">En</option>
+                    <option ngValue="es">Es</option>
+                </select>
+            </td>  
+            <td>
+                <button (click)="add()" class="btn">+</button>
+            </td> 
+           </tr> 
+        </tbody>
+    </table>     
+    <footer>
+        <button class='btn' (click)="suggestion()" *ngIf="isNewWord">Suggestion</button>
+        <button class='btn' (click)="close()">Cancel</button>
+        <button class='btn' (click)="save()">Enregistrer</button>
+    </footer>
+</modal>

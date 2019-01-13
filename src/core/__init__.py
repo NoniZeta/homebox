@@ -34,8 +34,8 @@ PATH_G2P        = os.path.join(PATH_RESOURCES, LANG, "g2p")
 """
     Paranètre de la base de données
 """
-HOST_DB   = "192.168.1.100"
-#HOST_DB   = "127.0.0.1"
+#HOST_DB   = "192.168.1.100"
+HOST_DB   = "127.0.0.1"
 PORT_DB   = 3306
 USER_DB   = "kodi"
 PASSWD_DB = "kodi"

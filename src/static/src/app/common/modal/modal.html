@@ -1,0 +1,18 @@
+<div class="modal inmodal fade" id="{{modal_id}}" tabindex="-1" role="dialog"  aria-hidden="true" #thisModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" [ngClass]="{'hide': !(has('header') || title) }">
+                <button *ngIf="showClose" type="button" class="close" (click)="closeInternal()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <ng-content select="header"></ng-content>
+                <h4 *ngIf='title' class="modal-title">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+
+            <div class="modal-footer" [ngClass]="{'hide': !has('footer') }" >
+                <ng-content select="footer"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="list">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+        <div class="row">
+           <div class="col-xs-2">
+                <label class="label-control">Filter by films</label>
+                <input class="form-control" [(ngModel)]="filterQuery"/>
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <label class="col-xs-12 label-control">Action</label>
+                </div>
+                <div class="col-xs-2">
+                    <div class="row">
+                        <button (click)="addOrdre()" class="btn">Ajout</button>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="row">
+                        <button (click)="saveOrdres()" class="btn">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+
+            <table class="table table-striped" [mfData]="data | filmFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                <tr>
+                    <th>
+                        <mfDefaultSorter by="key_ordre">key_ordre</mfDefaultSorter>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data" [ngClass]="{'highlight': item.isModified || !item.id }">
+                    <td>{{item.key_ordre}}</td>
+                    <td><table>
+                        <tr *ngFor="let row of item.mappings_messages">
+                            <td>{{row.key_vocal}}</td>
+                            <td>{{row.local}}</td>
+                        </tr>
+                    </table></td>
+                    <td>
+                        <button (click)="edit(item)" class="btn">Edit</button>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <mfBootstrapPaginator [rowsOnPageSet]="[20,50,100]"></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<modal  [showClose]='true' (onClose)="close()" #editModal>{{ bindModal(editModal) }}
+    <header>
+        <table>
+            <tr>
+                <td>
+                    <ng2-completer [(ngModel)]="ordreSelected.key_ordre" [dataService]="dataService" [minSearchLength]="1"></ng2-completer>
+                </td>
+            </tr>
+        </table>
+    </header>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Key vocal</th>
+                <th>Locale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of ordreSelected?.mappings_messages">
+                <td><input type="text" class="custom input-name" [(ngModel)]="row.key_vocal"></td>
+                <td>
+                    <select class="form-control" [(ngModel)]="row.local">
+                        <option ngValue="fr">Fr</option>
+                        <option ngValue="en">En</option>
+                        <option ngValue="es">Es</option>
+                    </select>
+                </td>
+                <td>
+                    <button (click)="delete(row)" class="btn btn-danger">X</button>
+                </td>
+           </tr>
+           <tr>
+            <td>
+                <input type="text" class="custom input-name" [(ngModel)]="newKeyVocal">      
+            </td>
+            <td>
+                <select class="form-control" [(ngModel)]="newLocale">
+                    <option ngValue="fr">Fr</option>
+                    <option ngValue="en">En</option>
+                    <option ngValue="es">Es</option>
+                </select>
+            </td>  
+            <td>
+                <button (click)="add()" class="btn">+</button>
+            </td> 
+           </tr> 
+        </tbody>
+    </table>     
+    <footer>
+        <button class='btn' (click)="close()">Cancel</button>
+        <button class='btn' (click)="save()">Enregistrer</button>
+    </footer>
+</modal>

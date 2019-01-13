@@ -24,7 +24,7 @@ from core.Bus import Bus
 from core.DecodeThread import DecodeThread
 from core import PORT_VOCAL_ADD, PATH_VOCAL, ACOUSTIC, DICTIONARY,\
     MODEL_LM_VOCAL
-from pocketsphinx.pocketsphinx import Decoder
+#from pocketsphinx.pocketsphinx import Decoder
 
 #hmmd_file = 'acoustic'
 #dictp_file = 'custom.dic'

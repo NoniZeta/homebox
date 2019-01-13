@@ -1,0 +1,22 @@
+<!--<h1>Bienvenue dans le module KODI</h1>
+-->
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" [routerLink]="[{ outlets: { kodiRouter: ['telecommande'] } }]" role="tab">Telecommande</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { kodiRouter: ['film'] } }]" role="tab">Films</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { kodiRouter: ['serie'] } }]" role="tab">Series</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { kodiRouter: ['musique'] } }]" role="tab">Musique</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <router-outlet name="kodiRouter"></router-outlet>
+</div>

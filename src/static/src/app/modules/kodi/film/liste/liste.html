@@ -1,0 +1,6 @@
+<div class="list_scroll">
+    <div class="list_content">
+        <div *ngFor="let item of films" (click)="open(item)" class='elt'>
+            <label class="info">{{item.id}}<span>&nbsp;:&nbsp;</span>{{item.title}}</label>
+        </div>
+</div>

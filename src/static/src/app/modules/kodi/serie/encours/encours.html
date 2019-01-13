@@ -1,0 +1,8 @@
+ <div class="list_scroll">
+    <div class="list_content">
+        <div *ngFor="let item of itemsLastPlayed" (click)="openEpisode(item)" class='elt'>
+            <label class="info">{{item.serieTitle}}</label>
+            <label class="info"><span>{{item.saison}}</span>x<span>{{item.episode}}</span></label>
+            <label class="info"><span>Id suivant : </span>{{item.nextEpisodeid}}</label>
+        </div>
+</div>

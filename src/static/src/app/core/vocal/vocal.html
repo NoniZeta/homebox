@@ -1,0 +1,41 @@
+<!--
+  Langue...
+  Dictionnaire : Gestion des mots et de graphemes. Ajout / modification / suppression
+    Lancement de G2P 
+    Word de module, des numéros, key_phraselist
+    Activer / desactiver un mot
+    Recharger le .dic
+    Creation de dic mot anglais  avec grapheme francais
+    Creation de dic mot espagnol avec grapheme francais
+-->
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" [routerLink]="[{ outlets: { vocalRouter: ['dictionnaire'] } }]" role="tab">Dictionnaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { vocalRouter: ['ordres'] } }]" role="tab">Ordres</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { vocalRouter: ['actions'] } }]" role="tab">Actions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" [routerLink]="[{ outlets: { vocalRouter: ['numeric'] } }]" role="tab">numeric</a>
+  </li>
+
+</ul>
+
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <router-outlet name="vocalRouter"></router-outlet>
+</div>
+<!--<div class="tab-content">
+  <div class="tab-pane active" id="dictionnaire" role="tabpanel">
+      <dictionnaire></dictionnaire>
+  </div>
+  <div class="tab-pane" id="ordre" role="tabpanel">
+      <ordre></ordre>
+  </div>
+</div>-->

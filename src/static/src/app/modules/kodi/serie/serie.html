@@ -1,0 +1,23 @@
+<div class="">
+    <div>
+
+        <!-- Tab panes -->
+        <div class="">
+            <router-outlet name="serieRouter"></router-outlet>
+        </div>
+
+        <div class="float-right">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="[{ outlets: { serieRouter: ['liste'] } }]" >Liste serie </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="[{ outlets: { serieRouter: ['encours'] } }]">En cours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="[{ outlets: { serieRouter: ['mapping'] } }]">Mapping</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

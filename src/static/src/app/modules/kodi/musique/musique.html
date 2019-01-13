@@ -1,0 +1,20 @@
+<div class="">
+    <div class="row">
+
+        <!-- Tab panes -->
+        <div class="">
+            <router-outlet name="musiqueRouter"></router-outlet>
+        </div>
+
+        <div class="float-right">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="[{ outlets: { musiqueRouter: ['liste'] } }]" >Liste musiques </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="[{ outlets: { musiqueRouter: ['mapping'] } }]">Mapping</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

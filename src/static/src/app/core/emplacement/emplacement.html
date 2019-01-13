@@ -1,0 +1,27 @@
+<div class='list_left'>
+    <div class="button_box">
+         <button class='btn' (click)="add()">add</button>
+         <button class='btn' (click)="delete()">delete</button>
+    </div>
+    <div class="list_scroll">
+        <div class="list_content">
+                <div class='elt' *ngFor="let item of emplacements">
+                    <input type="checkbox" class="checkbox_class" [(ngModel)]='item.toDelete' >
+                    <input disabled type="text" class="custom input-name" [(ngModel)]='item.name' placeholder="Entrer un nom"  >  
+                    <button class='btn' (click)="edit(item)">edit</button>
+                    <button class='btn' (click)="detail(item)">detail</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<emplacement-satelites-list class="list_right"  [item]="item"></emplacement-satelites-list>
+
+<modal [title]="Emplacement"  [showClose]='true' (onClose)="close()" #editModal>{{ bindModal(editModal) }}
+
+    <input type="text" class="custom input-name" [(ngModel)]='name'>       
+    <footer>
+        <button class='btn' (click)="close()">Cancel</button>
+        <button class='btn' (click)="save()" >Enregistrer</button>
+    </footer>
+</modal>

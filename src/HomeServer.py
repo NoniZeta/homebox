@@ -23,16 +23,17 @@ from os.path import dirname, basename, isfile
 import os.path
 import threading
 
-from core import PORT_SERVER
-from core.DownloadFilesService import DownloadFiles
-from core.WebSocketFacade import WebSocketFacade
 from tornado import gen
 from tornado.options import define, options
 import tornado.web
 import tornado.websocket
 
+from core import PORT_SERVER
+from core.DownloadFilesService import DownloadFiles
+from core.WebSocketFacade import WebSocketFacade
 
 define("port", default=PORT_SERVER, help="run on the given port", type=int)
+
 
 def main():
     global webSocketFacade
@@ -40,7 +41,7 @@ def main():
     global modules
     global downloadFiles 
 
-    logging.basicConfig(filename='/tmp/out.log',level=logging.DEBUG, format='%(asctime)s : %(levelname)s : %(name)s => %(message)s', datefmt='%Y/%m/%d %H:%M:%S')
+    logging.basicConfig(filename='/Temp/out.log', level=logging.DEBUG, format='%(asctime)s : %(levelname)s : %(name)s => %(message)s', datefmt='%Y/%m/%d %H:%M:%S')
     topiLogger = logging.getLogger('TopiServer')
     topiLogger.info('Start server')
     webSocketFacade = WebSocketFacade()
@@ -69,8 +70,9 @@ def main():
     app.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
 
+
 def loadModules(packageName):
-    modules_path = glob.glob(dirname(__file__)+ "/" + packageName + "/*.py")
+    modules_path = glob.glob(dirname(__file__) + "/" + packageName + "/*.py")
     __all__ = [ basename(f)[:-3] for f in modules_path if isfile(f)]
 
     for m_ in __all__:
@@ -84,11 +86,13 @@ def loadModules(packageName):
                 modules[name] = instMod 
                 if hasattr(instMod, "ORDRES") :
                     getattr(modules["modelVocalService"], "setOrdresbyModules")(instMod.ORDRES, instMod.VARIABLES, name)
-                    #modelVocalService.setOrdresbyModules(instMod.ORDRES, instMod.VARIABLES, name)   
+                    # modelVocalService.setOrdresbyModules(instMod.ORDRES, instMod.VARIABLES, name)   
             except Exception as e :
-                print (e.__str__())
+                print ("homeserver : loadModule " + module_name + "=>" + e.__str__())
+
 
 class Application(tornado.web.Application):
+
     def __init__(self):
          
         settings = dict(
@@ -112,10 +116,13 @@ class Application(tornado.web.Application):
         
 
 class MainHandler(tornado.web.RequestHandler):
+
     def get(self):
         self.render("index.html")
 
+
 class JsonMessageHandler(tornado.web.RequestHandler):
+
     def initialize(self):
         self.modules = modules
         
@@ -131,13 +138,13 @@ class JsonMessageHandler(tornado.web.RequestHandler):
             data = json2obj(self.request.body)
             args = data.parameters
             module = data.module
-            func =  getattr(self.modules[module], data.method)
+            func = getattr(self.modules[module], data.method)
         except Exception as e :
             print (e.__str__())
-            #raise e
+            # raise e
         t = Worker(self.worker_done, args, func)
         t.start()
-        #self.finish()
+        # self.finish()
         
     def get(self):
         self.write('some get')
@@ -156,8 +163,10 @@ class JsonMessageHandler(tornado.web.RequestHandler):
         topiLogger.debug("JSONMessage : message received %r", jsonObj)             
         self.write(jsonObj)
         self.finish()
+
         
 class Worker(threading.Thread):
+
     def __init__(self, callback=None, arguments=None, func=None, *args, **kwargs):
         super(Worker, self).__init__(*args, **kwargs)
         self.func = func
@@ -186,10 +195,9 @@ class PingHandler(tornado.web.RequestHandler):
             self.obj = {}
             if getattr(modules["modelVocalService"], "vocalReady") :
             #  if modelVocalService.vocalReady :
-                self.obj['port'] =  getattr(self.modules["devicesService"], "ping")(ip_obj, macAddr, resources)
-                self.obj['vocalActive'] =  getattr(self.modules["vocal"], "isVocal")()
+                self.obj['port'] = getattr(self.modules["devicesService"], "ping")(ip_obj, macAddr, resources)
+                self.obj['vocalActive'] = getattr(self.modules["vocal"], "isVocal")()
                 self.obj['sumsOfFiles'] = self.downloadFiles.getFilesVocal()
-
                 
             if hasattr(self.obj, "__dict__"):
                 jsonObj = json.dumps(self.obj.__dict__, default=lambda o: o.__dict__)
@@ -200,9 +208,10 @@ class PingHandler(tornado.web.RequestHandler):
             self.add_header('Content-Type', 'application/x-www-form-urlencoded')    
             self.write(jsonObj)
             self.finish()
-            #print str(time.time() - t_1)
+            # print str(time.time() - t_1)
         except Exception as e:
             print (str(e))
+
 
 class WSMessageHandler(tornado.websocket.WebSocketHandler):
     
@@ -228,12 +237,11 @@ class MJPEGHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.stream = getattr(modules["bebepaz"], "stream")
     
-    
     @tornado.web.asynchronous
     @tornado.gen.coroutine
     def get(self):
 
-        self.set_header( 'Content-Type', 'multipart/x-mixed-replace;boundary=--boundarydonotcross')
+        self.set_header('Content-Type', 'multipart/x-mixed-replace;boundary=--boundarydonotcross')
         try :    
             for img in self.stream() :
                 
@@ -249,8 +257,10 @@ class MJPEGHandler(tornado.web.RequestHandler):
 def _json_object_hook(d): 
     return namedtuple('X', d.keys())(*d.values())
 
+
 def json2obj(data): 
     return json.loads(data, object_hook=_json_object_hook)
+
     
 if __name__ == "__main__":
     main()

@@ -1,0 +1,40 @@
+
+<div class="row">
+    <button (click)="getObjectsConnected()" class="btn">Scan network</button>
+</div>
+
+<div class="list_scroll">
+	<div class="list_content">
+        <object-connected *ngFor="let item of objectsConnected" [ngClass]="{'elt': true, 'highlight': item.isConnected}"  [item]="item" (click)="open(item)"></object-connected>
+    </div>
+</div>
+
+<modal  [showClose]='true' (onClose)="close()" #editModal>{{ bindModal(editModal) }}
+    <header>
+        <input type="text" class="custom input-name" [(ngModel)]='name'>       
+    </header>
+    <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]='hasMicrophone' > <!--#cv1 (change)="onChangeM(cv1.checked)" #cv2 (change)="onChangeE(cv2.checked)"-->
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Micophone</span>
+    </label>
+    <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]='hasEnceinte' >
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Haut-parleur</span>
+    </label>
+    <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]='hasEcran' >
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Ecran</span>
+    </label>
+    <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]='hasCamera' >
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Camera</span>
+    </label>
+    <footer>
+        <button class='btn' (click)="close()">Cancel</button>
+        <button class='btn' (click)="save()">Enregistrer</button>
+    </footer>
+</modal>

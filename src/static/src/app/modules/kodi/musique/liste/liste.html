@@ -1,0 +1,22 @@
+<ol class="breadcrumb">
+    <li *ngFor="let item of breadcrumbList" class="breadcrumb-item" (click)="openBreadCrumb(item)">
+        <label [ngClass]="{'active':item !== breadcrumbList[breadcrumbList.length-1]}">{{item.title}}</label>
+    </li>
+</ol>
+<div class="list_scroll">
+    <div *ngIf="isDiplaying === 'artiste'" class="list_content">
+        <div *ngFor="let item of itemsArtist" (click)="open(item)" class='elt'>
+            <label class="info">{{item.name}}</label>
+        </div>
+    </div>
+    <div *ngIf="isDiplaying === 'album'" class="list_content">
+        <div *ngFor="let item of itemsAlbum" (click)="openAlbum(item)" class='elt'>
+            <label class="info"><span>{{item.name}}</span></label>
+        </div>
+    </div>
+    <div *ngIf="isDiplaying === 'music'" class="list_content">
+        <div *ngFor="let item of itemsMusic" (click)="openMusic(item)" class='elt'>
+            <label class="info"><span>{{item.title}}</span></label>
+        </div>
+    </div>
+</div>
